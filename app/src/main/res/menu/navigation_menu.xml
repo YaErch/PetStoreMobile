@@ -5,4 +5,7 @@
     <item
         android:id="@+id/action_list_pets"
         android:title="List Pets" />
+    <item
+        android:id="@+id/action_get_pet_by_id"
+        android:title="Get Pet By ID" />
 </menu>
