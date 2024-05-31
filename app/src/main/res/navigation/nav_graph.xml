@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_addPetFragment_to_listPetsFragment"
             app:destination="@id/listPetsFragment" />
+        <action
+            android:id="@+id/action_addPetFragment_to_getPetByIdFragment"
+            app:destination="@id/getPetByIdFragment" />
     </fragment>
 
     <fragment
@@ -20,6 +23,12 @@
         <action
             android:id="@+id/action_listPetsFragment_to_addPetFragment"
             app:destination="@id/addPetFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/getPetByIdFragment"
+        android:name="com.example.petstoretest.ui.GetPetByIdFragment"
+        android:label="Get Pet By ID Fragment">
     </fragment>
 
 </navigation>

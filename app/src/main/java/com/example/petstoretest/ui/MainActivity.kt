@@ -18,21 +18,22 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setupWithNavController(navController)
 
-        bottomNavigationView.menu.findItem(R.id.action_list_pets)?.let { menuItem ->
-            bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.action_add_pet -> {
-                        navController.navigate(R.id.addPetFragment)
-                        true
-                    }
-                    R.id.action_list_pets -> {
-                        navController.navigate(R.id.listPetsFragment)
-                        true
-                    }
-                    else -> false
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.action_add_pet -> {
+                    navController.navigate(R.id.addPetFragment)
+                    true
                 }
+                R.id.action_list_pets -> {
+                    navController.navigate(R.id.listPetsFragment)
+                    true
+                }
+                R.id.action_get_pet_by_id -> {
+                    navController.navigate(R.id.getPetByIdFragment)
+                    true
+                }
+                else -> false
             }
         }
-
     }
 }

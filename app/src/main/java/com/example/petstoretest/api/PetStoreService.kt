@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface PetStoreService {
     @GET("pet/{petId}")
-    fun getPetById(@Path("petId") petId: Long): Call<Pet>
+    fun getPetById(@Path("petId") petId: Int): Call<Pet>
 
     @POST("pet")
     fun addPet(@Body pet: Pet): Call<Pet>
