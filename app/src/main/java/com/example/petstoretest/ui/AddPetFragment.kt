@@ -15,6 +15,7 @@ import com.example.petstoretest.model.Pet
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.random.Random
 
 class AddPetFragment : Fragment() {
 
@@ -32,7 +33,9 @@ class AddPetFragment : Fragment() {
             val name = etName.text.toString()
             val status = etStatus.text.toString()
 
-            val newPet = Pet(id = 0, name = name, status = status)
+            val randomId = Random.nextLong(1, 1001) // Генерация случайного целого числа от 1 до 1000
+
+            val newPet = Pet(id = randomId, name = name, status = status)
 
             RetrofitInstance.api.addPet(newPet).enqueue(object : Callback<Pet> {
                 override fun onResponse(call: Call<Pet>, response: Response<Pet>) {
@@ -51,6 +54,7 @@ class AddPetFragment : Fragment() {
                 }
             })
         }
+
 
         return view
     }
