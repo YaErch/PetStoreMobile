@@ -1,0 +1,25 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/addPetFragment">
+
+    <fragment
+        android:id="@+id/addPetFragment"
+        android:name="com.example.petstoretest.ui.AddPetFragment"
+        android:label="Add Pet Fragment">
+        <action
+            android:id="@+id/action_addPetFragment_to_listPetsFragment"
+            app:destination="@id/listPetsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listPetsFragment"
+        android:name="com.example.petstoretest.ui.ListPetFragment"
+        android:label="List Pets Fragment">
+        <action
+            android:id="@+id/action_listPetsFragment_to_addPetFragment"
+            app:destination="@id/addPetFragment" />
+    </fragment>
+
+</navigation>
